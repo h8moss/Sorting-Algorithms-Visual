@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sorting algorithms visualization
+        </title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body class="text-dark bg-info">
+        <div class="text-info bg-dark" width="100%">
+            <div class="text-info bg-dark topDiv row container-fluid">
+                <div class="col-md-12">
+                    <h1>
+                        Sorting Algorithm visualization
+                    </h1>
+                </div>
+                <div class="col-md-3">
+                    <button id="ShuffleButton" class="btn btn-info">
+                        Shuffle
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <select id="AlgorithmSelect" class="custom-select-sm">
+                    </select>
+                    <button id="infoButton" class="btn-light">i</button>
+                </div>
+                <div class="col-md-3">
+                    <label>Size:</label>
+                    <input
+                        type="number"
+                        min="1"
+                        max="1000"
+                        class="custom-select-sm"
+                        id="SizeInput"
+                    />
+                </div>
+                <div class="col-md-3">
+                    <label for="ShowSteps">Show Steps</label>
+                    <input id="ShowSteps" type="checkbox" checked />
+                    <button id="SortButton" class="btn btn-info">Sort</button>
+                </div>
+            </div>
+        </div>
+        <div id="MainShowDiv">
+            <p id="NumSortingShow"></p>
+            <canvas id="SortingShow" height="400px" width="1000px"> </canvas>
+        </div>
+        <div class="text-info bg-dark" width="100%">
+            <div class="text-info bg-dark topDiv row container-fluid">
+                <div class="col-md-4">
+                    <p>Runtime: <span id="Runtime">00:00:00.00</span></p>
+                </div>
+                <div class="col-md-4">
+                    <p>Total Iterations: <span id="IterationsCount">0</span></p>
+                </div>
+                <div class="col-md-4">
+                    <button
+                        id="AdvancedOptsBtn"
+                        trype="button"
+                        class="btn btn-link"
+                    >
+                        Advanced Options
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal/Lightbox -->
+        <div id="MainLightbox" class="modal">
+            <span id="CloseLightBox" class="close cursor">&times;</span>
+            <div class="modal-content">
+                <!-- Caption text -->
+                <div class="caption-container">
+                    <p id="LighBoxcaption">Title</p>
+                </div>
+                <div>
+                    <p id="LightBoxContent">Content</p>
+                </div>
+            </div>
+        </div>
+        <div
+            id="AdvancedOptions"
+            class="bg-dark text-info container roundSquare"
+            style="display: none;"
+        >
+            <label>Canvas</label>
+            <input type="checkbox" checked id="CanvasShowEle" />
+            <br />
+            <label>Show Steps delay</label>
+            <input type="number" min="0" max="1000" id="DelayCounter" />
+        </div>
+        <div id="BogoLightBox" class="modal">
+            <div id="BogoWarning" class="bg-light container roundSquare">
+                <h2>
+                    Are you sure you want to run bogo sort?
+                </h2>
+                <p>
+                    It's very slow
+                </p>
+                <button class="btn btn-secondary" id="RunBogoSort">
+                    Yes
+                </button>
+                <button class="btn btn-danger" id="DontRunBogoSort">
+                    Cancel
+                </button>
+            </div>
+        </div>
+        <script src="js/index.js"></script>
+        <script src="js/algorithms.js"></script>
+        <script src="js/infoCode.js"></script>
+    </body>
+</html>
