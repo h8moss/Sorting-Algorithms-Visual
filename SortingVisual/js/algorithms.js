@@ -14,9 +14,7 @@ let algorithms = [
             let loopsNum = 0;
             let SortedList = CreateList(mainList.length, 1);
             console.log(mainList + "\n" + SortedList);
-            console.log(
-                JSON.stringify(mainList) !== JSON.stringify(SortedList)
-            );
+
             while (JSON.stringify(mainList) !== JSON.stringify(SortedList)) {
                 loopsNum += 1;
                 for (let i = 0; i < mainList.length; i++) {
@@ -441,11 +439,11 @@ let algorithms = [
         }
     }
 ];
-//?...................................................................................................
+//?.............................................................................
 let Base = {
     name: "",
     Info: "WIP",
-    WikiLink: "https://en.wikipedia.org/wiki/[Algorithm_name]", //!<--------------
+    WikiLink: "https://en.wikipedia.org/wiki/[Algorithm_name]", //!<------------
     Sort(MainList) {
         let LoopNum = 0;
         while (JSON.stringify(mainList) !== JSON.stringify(SortedList)) {
